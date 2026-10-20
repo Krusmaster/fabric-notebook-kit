@@ -69,6 +69,15 @@ or add it to a Fabric Environment so every notebook has it. See `templates/` for
 `resolve` and `NotebookRun` are pure Python and tested offline. `merge_by_key` needs Spark + Delta
 and is exercised in a Fabric notebook.
 
+## Works on
+
+| Platform | Status |
+| --- | --- |
+| Fabric | yes — all three |
+| Databricks | `resolve` yes; `NotebookRun(exit_fn=dbutils.notebook.exit)` yes; `merge_by_key` yes (Delta) |
+| Snowflake | no Spark/Delta — `resolve` and `NotebookRun` work in any Python; `merge_by_key` does not |
+| Local Python | `resolve`, `NotebookRun` yes; `merge_by_key` with local PySpark + Delta |
+
 ## License
 
 MIT
